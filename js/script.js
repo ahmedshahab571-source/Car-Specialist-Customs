@@ -150,6 +150,20 @@
     });
   });
 
+  /* ---------- In-page navigation: smooth scroll + arrival animation ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      var id = link.getAttribute("href");
+      if (!id || id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      // replay the "arrive" animation on the destination section
+      target.classList.remove("nav-arrive");
+      void target.offsetWidth; // force reflow so the animation restarts
+      target.classList.add("nav-arrive");
+    });
+  });
+
   /* ---------- Footer year ---------- */
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();

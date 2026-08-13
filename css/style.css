@@ -845,12 +845,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .js .hero__inner { animation: heroUp .8s cubic-bezier(.22, .61, .36, 1) both; }
 
+/* Arrival animation when navigating to a section via the menu */
+section[id], main [id] { scroll-margin-top: 80px; }
+@keyframes navArrive {
+  0%   { opacity: .4; transform: translateY(14px); }
+  100% { opacity: 1; transform: none; }
+}
+.nav-arrive { animation: navArrive .6s cubic-bezier(.22, .61, .36, 1); }
+
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .btn:hover, .card:hover, .social:hover { transform: none; }
   .wa-float { animation: none; }
   .hero__inner { animation: none; }
+  .nav-arrive { animation: none; }
 
   /* Stop the marquee and lay brands out as a centered static wrap */
   .marquee { -webkit-mask-image: none; mask-image: none; }

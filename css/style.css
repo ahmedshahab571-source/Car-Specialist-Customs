@@ -45,12 +45,21 @@ html {
 body {
   margin: 0;
   font-family: var(--font);
-  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  /* Minimal ambient depth: near-black base + faint dot grid + two soft corner glows */
+  background-color: #090a0d;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1.4px),
+    radial-gradient(1100px 720px at 7% -6%, rgba(74, 80, 98, 0.20), transparent 55%),
+    radial-gradient(950px 640px at 100% 102%, rgba(225, 20, 20, 0.075), transparent 55%);
+  background-size: 26px 26px, auto, auto;
+  background-position: 0 0, 0 0, 0 0;
+  background-attachment: fixed;
+  background-repeat: repeat, no-repeat, no-repeat;
 }
 
 img, svg { max-width: 100%; display: block; }

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 92" role="img" aria-label="Car Specialist Customs">
-  <g font-family="Arial Black, Arial, sans-serif" font-weight="900">
-    <text x="4" y="52" font-size="54" letter-spacing="-2" fill="#ffffff">CSC</text>
-    <rect x="44" y="54" width="9" height="8" transform="skewX(-22)" fill="#e11414"/>
-    <rect x="58" y="54" width="9" height="8" transform="skewX(-22)" fill="#e11414"/>
-    <text x="5" y="82" font-size="14.5" letter-spacing="1.2" fill="#ffffff" textLength="290" lengthAdjust="spacing">CAR SPECIALIST CUSTOMS</text>
-  </g>
-</svg>

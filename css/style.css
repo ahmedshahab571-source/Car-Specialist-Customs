@@ -273,6 +273,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__glass .badge-row,
 .hero__glass .hero__cta,
 .hero__glass .hero__trust { justify-content: center; }
+/* Buttons/badges shouldn't inherit the headline text-shadow */
+.hero__glass .btn,
+.hero__glass .badge { text-shadow: none; }
 .hero__lead { margin-left: auto; margin-right: auto; }
 .hero__trust { text-shadow: none; }
 

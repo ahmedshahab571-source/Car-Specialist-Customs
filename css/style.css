@@ -312,22 +312,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero__trust svg { width: 16px; height: 16px; color: var(--red); flex: none; }
 
-/* ---- Quick enquiry section ---------------------------------------------- */
+/* ---- "Need help" section ------------------------------------------------- */
 .enquiry { background: var(--bg-2); border-bottom: 1px solid var(--border); }
-.enquiry__grid { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: center; }
-.enquiry__intro h2 { margin-bottom: 12px; }
-.enquiry__intro > p { font-size: 1.05rem; max-width: 520px; }
-.enquiry__points { display: grid; gap: 12px; margin: 22px 0 24px; }
-.enquiry__points li {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: .96rem; color: var(--text);
+.enquiry__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 36px;
 }
-.enquiry__points svg { width: 18px; height: 18px; color: var(--red); flex: none; margin-top: 2px; }
-.enquiry__or {
-  display: flex; align-items: center; flex-wrap: wrap; gap: 12px 16px;
-  padding-top: 6px;
-}
-.enquiry__or span { font-size: .92rem; color: var(--text-muted); }
+.enquiry__cta .btn { min-width: 210px; }
 
 /* ---- Quick enquiry form (card) ------------------------------------------ */
 .form-card {
@@ -807,7 +801,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero { min-height: 640px; padding: 72px 0; }
   .hero__glass { padding: 44px 40px; }
   .hero__cta .btn { flex: 0 1 auto; }
-  .enquiry__grid { grid-template-columns: 1fr 1fr; gap: 48px; }
 
   .cards { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: repeat(4, 1fr); }

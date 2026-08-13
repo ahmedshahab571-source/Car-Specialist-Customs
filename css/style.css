@@ -242,9 +242,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(900px 520px at 50% 12%, rgba(225, 20, 20, 0.18), transparent 60%),
-    radial-gradient(120% 130% at 50% 45%, rgba(7, 7, 8, 0.34) 0%, rgba(7, 7, 8, 0.66) 70%, rgba(7, 7, 8, 0.82) 100%),
-    linear-gradient(180deg, rgba(7, 7, 8, 0.55) 0%, rgba(7, 7, 8, 0.55) 55%, rgba(7, 7, 8, 0.78) 100%);
+    radial-gradient(900px 520px at 50% 12%, rgba(225, 20, 20, 0.15), transparent 60%),
+    radial-gradient(130% 130% at 50% 42%, rgba(7, 7, 8, 0.12) 0%, rgba(7, 7, 8, 0.40) 66%, rgba(7, 7, 8, 0.60) 100%),
+    linear-gradient(180deg, rgba(7, 7, 8, 0.28) 0%, rgba(7, 7, 8, 0.30) 50%, rgba(7, 7, 8, 0.58) 100%);
 }
 .hero__inner { position: relative; z-index: 2; width: 100%; }
 
@@ -254,7 +254,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 .hero__glass .badge-row,
 .hero__glass .hero__cta,

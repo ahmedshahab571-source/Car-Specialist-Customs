@@ -236,28 +236,31 @@ ul { margin: 0; padding: 0; list-style: none; }
   object-position: center;
   z-index: 0;
 }
-/* Scrim: dark on the left (behind the text) fading to reveal the photo on the right */
+/* Scrim: uniform dark wash + vignette so centered text is legible across the whole image */
 .hero__scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(760px 460px at 88% 24%, rgba(225, 20, 20, 0.22), transparent 62%),
-    linear-gradient(90deg, rgba(7, 7, 8, 0.93) 0%, rgba(7, 7, 8, 0.78) 32%, rgba(7, 7, 8, 0.40) 60%, rgba(7, 7, 8, 0.22) 100%),
-    linear-gradient(180deg, rgba(7, 7, 8, 0.10) 0%, rgba(7, 7, 8, 0.30) 55%, rgba(7, 7, 8, 0.62) 100%);
+    radial-gradient(900px 520px at 50% 12%, rgba(225, 20, 20, 0.18), transparent 60%),
+    radial-gradient(120% 130% at 50% 45%, rgba(7, 7, 8, 0.34) 0%, rgba(7, 7, 8, 0.66) 70%, rgba(7, 7, 8, 0.82) 100%),
+    linear-gradient(180deg, rgba(7, 7, 8, 0.55) 0%, rgba(7, 7, 8, 0.55) 55%, rgba(7, 7, 8, 0.78) 100%);
 }
 .hero__inner { position: relative; z-index: 2; width: 100%; }
 
+/* Full-width, centered hero copy (no boxed panel) */
 .hero__glass {
-  max-width: 620px;
-  padding: 34px 28px;
-  background: rgba(14, 15, 18, 0.34);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  -webkit-backdrop-filter: blur(12px) saturate(130%);
-  backdrop-filter: blur(12px) saturate(130%);
-  box-shadow: var(--shadow-lg);
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
+.hero__glass .badge-row,
+.hero__glass .hero__cta,
+.hero__glass .hero__trust { justify-content: center; }
+.hero__lead { margin-left: auto; margin-right: auto; }
+.hero__trust { text-shadow: none; }
 
 .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
 .badge {

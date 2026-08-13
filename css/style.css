@@ -36,7 +36,11 @@
 /* ---- Reset / base -------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* anchored sections stop just below the sticky navbar */
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
@@ -813,14 +817,40 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---- Reveal-on-scroll animation (progressive enhancement) ---------------- */
 /* Only hide when JS is available; without JS everything stays visible. */
-.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s cubic-bezier(.22, .61, .36, 1),
+              transform .7s cubic-bezier(.22, .61, .36, 1);
+}
 .js .reveal.is-in { opacity: 1; transform: none; }
+
+/* Stagger items that reveal together within a group */
+.js .cards .reveal:nth-child(2),
+.js .steps .reveal:nth-child(2),
+.js .testi__grid .reveal:nth-child(2) { transition-delay: .09s; }
+.js .cards .reveal:nth-child(3),
+.js .steps .reveal:nth-child(3),
+.js .testi__grid .reveal:nth-child(3) { transition-delay: .18s; }
+.js .cards .reveal:nth-child(4),
+.js .steps .reveal:nth-child(4) { transition-delay: .27s; }
+.js .cards .reveal:nth-child(5),
+.js .steps .reveal:nth-child(5) { transition-delay: .36s; }
+.js .cards .reveal:nth-child(6) { transition-delay: .45s; }
+
+/* Hero entrance on load */
+@keyframes heroUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+.js .hero__inner { animation: heroUp .8s cubic-bezier(.22, .61, .36, 1) both; }
 
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .btn:hover, .card:hover, .social:hover { transform: none; }
   .wa-float { animation: none; }
+  .hero__inner { animation: none; }
 
   /* Stop the marquee and lay brands out as a centered static wrap */
   .marquee { -webkit-mask-image: none; mask-image: none; }

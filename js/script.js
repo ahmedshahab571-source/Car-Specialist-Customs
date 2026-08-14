@@ -41,9 +41,11 @@
   /* ---------- Scroll reveal ---------- */
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {
+    // Re-trigger the animation every time an element enters or leaves the
+    // viewport (so scrolling back up and down replays it), not just once.
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+        e.target.classList.toggle("is-in", e.isIntersecting);
       });
     }, { threshold: 0.12 });
     reveals.forEach(function (el) { io.observe(el); });

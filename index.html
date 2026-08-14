@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"></noscript>
 
-  <link rel="stylesheet" href="css/style.css?v=18">
+  <link rel="stylesheet" href="css/style.css?v=23">
 
   <!-- Structured data: LocalBusiness (AutomotiveBusiness) -->
   <script type="application/ld+json">
@@ -93,8 +93,12 @@
 </head>
 <body>
 
+<!-- Top anchor: keeps the "Home" / logo links returning to the very top
+     (anchoring to the sticky header itself doesn't scroll). -->
+<span id="top" aria-hidden="true"></span>
+
 <!-- ============================== NAVBAR ============================== -->
-<header class="nav" id="top">
+<header class="nav">
   <div class="container nav__inner">
     <a href="#top" class="nav__logo" aria-label="Car Specialist Customs — home">
       <img src="assets/icons/logo.png" alt="Car Specialist Customs logo" width="48" height="48" fetchpriority="high">
@@ -110,11 +114,11 @@
     </nav>
 
     <div class="nav__actions">
-      <a class="btn btn--call" href="tel:+441615243872" aria-label="Call Car Specialist Customs">
+      <a class="btn btn--call btn--pill" href="tel:+441615243872" aria-label="Call Car Specialist Customs">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         Call Now
       </a>
-      <a class="btn btn--primary" href="#contact-form">Request a Quote</a>
+      <a class="btn btn--primary btn--pill" href="#contact-form">Request a Quote</a>
     </div>
 
     <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -137,32 +141,29 @@
 
 <!-- ============================== HERO ============================== -->
 <section class="hero" aria-labelledby="hero-title">
-  <img class="hero__bg" src="assets/images/hero.jpg?v=3" alt="Hand holding a car key in front of a car — car immobilizer and key services" fetchpriority="high" width="1600" height="900">
+  <img class="hero__bg" src="assets/images/hero-key.jpg" alt="Hand holding a car smart key inside a vehicle — car immobilizer and key programming services" fetchpriority="high" width="1600" height="900">
   <div class="hero__scrim" aria-hidden="true"></div>
-  <div class="container hero__inner">
-    <div class="hero__glass">
-      <div class="badge-row">
-        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3z"/></svg> Rochdale, OL12</span>
-        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/></svg> Open 7 Days · 9AM–8PM</span>
-      </div>
 
-      <p class="eyebrow">Car Immobilizer Specialists</p>
-      <h1 id="hero-title">Professional Car <span class="accent">Immobilizer Services</span> in Rochdale</h1>
-      <p class="hero__lead">Car won’t start, key not recognised or an immobilizer warning light? We provide professional immobilizer diagnostics and automotive key solutions for reliable vehicle assistance across many makes and models.</p>
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Rochdale · Open 7 Days</p>
+      <h1 id="hero-title">
+        <span class="hero__line">Professional</span>
+        <span class="hero__line accent">Car Immobilizer</span>
+        <span class="hero__line">Service</span>
+      </h1>
+      <p class="hero__lead">Immobilizer diagnostics, key programming and starting-fault fixes across many makes and models.</p>
 
       <div class="hero__cta">
-        <a class="btn btn--primary btn--lg" href="#contact-form">Request a Free Quote</a>
-        <a class="btn btn--call btn--lg" href="tel:+441615243872">
+        <a class="btn btn--primary btn--lg btn--pill" href="#contact-form">
+          Request a Free Quote
+          <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="btn btn--call btn--lg btn--pill" href="tel:+441615243872">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Call 0161 524 3872
         </a>
       </div>
-
-      <ul class="hero__trust">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Experienced technicians</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Modern diagnostics</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fast response</li>
-      </ul>
     </div>
   </div>
 </section>
